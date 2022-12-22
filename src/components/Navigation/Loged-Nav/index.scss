@@ -1,0 +1,202 @@
+.navloged {
+  min-width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  position: fixed;
+  z-index: 8000;
+  background-color: #00000075;
+
+  &__links {
+    padding: 1rem;
+    display: flex;
+    gap: 2rem;
+    min-width: min-content;
+    margin-left: 2rem;
+    margin-right: auto;
+    list-style: none;
+
+    @media only screen and (max-width: 450px) {
+      gap: 1rem;
+      margin-left: 0rem;
+    }
+  }
+
+  &__btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(0.85rem, 2vw, 1.15rem);
+    letter-spacing: 0.1rem;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    opacity: 0.9;
+    transition: opacity 0.1s ease-in;
+
+    &:hover,
+    &:focus {
+      opacity: 0.75;
+      outline: none;
+    }
+  }
+
+  .search-wrapper {
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 900px) {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+  }
+
+  &__name {
+    color: #fff;
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: 0.5rem;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    @media only screen and (max-width: 900px) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    width: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    flex-wrap: wrap;
+    border: none;
+    background: transparent;
+
+    @media only screen and (max-width: 900px) {
+      width: 2rem;
+    }
+
+    &:hover .arrow,
+    &:focus .arrow {
+      transform: rotateZ(180deg);
+    }
+
+    &:hover ~ &-menu,
+    &:focus ~ &-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    img {
+      width: 50%;
+
+      @media only screen and (max-width: 900px) {
+        width: 100%;
+      }
+    }
+
+    .arrow {
+      fill: #fff;
+      width: 2rem;
+      height: 2rem;
+      transition: transform 0.3s ease-out;
+
+      @media only screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+  }
+
+  &__icon-menu {
+    background-color: #1a1919;
+    position: absolute;
+    width: 10rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease-in;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    z-index: 9999;
+
+    @media only screen and (max-width: 900px) {
+      margin-top: 3rem;
+      margin-right: 10rem;
+      width: 14rem;
+    }
+
+    &:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-size: clamp(-0.25rem, 3vw, 0.9rem);
+      font-family: "Sans Open", sans-serif;
+      font-weight: bold;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: opacity 0.2s ease-out;
+
+      &:hover,
+      &:focus {
+        opacity: 0.85;
+        outline: none;
+      }
+    }
+
+    .user-small {
+      display: none;
+    }
+
+    .search-wrapper-small {
+      display: none;
+      width: 10rem;
+      margin-bottom: 1rem;
+
+      @media only screen and (max-width: 900px) {
+        display: inline-block;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      .user-small {
+        display: inline-block;
+        margin-bottom: 1.5rem;
+        font-style: italic;
+        opacity: 0.9;
+        color: #fff;
+        font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-right: 0.5rem;
+
+        &::first-letter {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+
+  .active {
+    opacity: 1;
+    font-weight: 700;
+  }
+}

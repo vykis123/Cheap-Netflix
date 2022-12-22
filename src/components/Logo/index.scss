@@ -1,0 +1,33 @@
+.nav__logo {
+  -webkit-clip-path: polygon(
+    44% 0,
+    70% 0,
+    100% 0,
+    100% 82%,
+    81% 76%,
+    51% 72%,
+    23% 75%,
+    0 81%,
+    0 0,
+    28% 0
+  );
+  clip-path: polygon(
+    44% 0,
+    70% 0,
+    100% 0,
+    100% 82%,
+    81% 76%,
+    51% 72%,
+    23% 75%,
+    0 81%,
+    0 0,
+    28% 0
+  );
+
+  a {
+    text-decoration: none;
+    color: #e50914;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+  }
+}

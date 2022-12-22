@@ -1,0 +1,171 @@
+.singup {
+  min-width: 25%;
+  border-radius: 0.3rem;
+  padding: 3rem;
+  margin-top: 4rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  position: relative;
+
+  @media (max-width: 1100px) {
+    min-width: 50%;
+  }
+  @media (max-width: 700px) {
+    min-width: 75%;
+  }
+  @media (max-width: 450px) {
+    min-width: 95%;
+    padding: 1.5rem;
+  }
+
+  &__heading {
+    font-size: clamp(1.75rem, 3vw, 2.3rem);
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  &__group {
+    border-radius: 0.3rem;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    .wrapper {
+      position: relative;
+
+      input {
+        width: 100%;
+        padding: 1.5rem 1rem 0.5rem 1rem;
+        border-radius: 0.3rem;
+        background-color: #333;
+        border: none;
+        // box-shadow: inset 0rem -0.45rem 0rem -0.3rem #e87c03;
+        font-size: 1.2rem;
+        color: #fff;
+        font-family: "Open Sans", sams-serif;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:focus ~ span {
+          top: 20%;
+          font-size: 0.85rem;
+        }
+
+        &:valid ~ span {
+          top: 20%;
+          font-size: 0.85rem;
+        }
+      }
+
+      .wrong-name,
+      .wrong-email,
+      .empty-email,
+      .wrong-pass2 {
+        box-shadow: inset 0rem -0.15rem 0rem #e87c03;
+      }
+
+      span {
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        translate: 0 -50%;
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        font-family: "Open Sans", sans-serif;
+        color: #8c8c8c;
+        font-family: "Open Sans", sans-serif;
+        transition: all 0.2s ease-in;
+        pointer-events: none;
+      }
+    }
+
+    p {
+      color: #e87c03;
+      bottom: 2rem;
+      padding: 0.2rem 0.5rem;
+      font-size: clamp(1rem, 3vw, 1rem);
+    }
+
+    p.password {
+      color: #bbb4b4;
+    }
+    p.correct {
+      color: #00ff00;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    font-size: clamp(1.2rem, 3vw, 1.4rem);
+    padding: 1rem 0;
+    background-color: #e50914;
+    border: none;
+    border-radius: 0.3rem;
+    color: #fff;
+    transition: color 0.2s ease-in;
+    margin-bottom: 2rem;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      color: #333;
+      cursor: pointer;
+    }
+  }
+
+  &__text {
+    color: #737373;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    font-family: "Open Sans", sans-serif;
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  &__link {
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: clamp(1.1rem, 3vw, 1.35rem);
+    transition: color 0.2s ease-in;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      color: #e50914;
+    }
+  }
+
+  .info-message {
+    position: absolute;
+    bottom: -1%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    color: #44f712;
+    animation: fadeInFromAbove 0.25s ease-out;
+    min-width: 80%;
+    pointer-events: none;
+
+    @media only screen and (max-width: 450px) {
+      bottom: 4%;
+    }
+  }
+}
+
+@keyframes fadeInFromAbove {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

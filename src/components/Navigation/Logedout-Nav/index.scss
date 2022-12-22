@@ -1,0 +1,43 @@
+.nav {
+  min-width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+
+  @media (max-width: 450px) {
+    padding: 1.5rem 0.7rem;
+  }
+
+  .btn {
+    background-color: #e50914;
+    align-items: center;
+    padding: 0.7rem 1.7rem;
+    font-family: "Opens Sans", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    text-decoration: none;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+
+      @media (max-width: 450px) {
+        margin-right: 1rem;
+      }
+    }
+
+    &:hover {
+      color: #000;
+    }
+
+    &:focus {
+      outline: 1px solid #000;
+    }
+  }
+}

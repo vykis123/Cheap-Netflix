@@ -1,0 +1,24 @@
+.homepage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  &__heading {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bold;
+    font-size: clamp(1.75rem, 2vw, 3.2rem);
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__subheading {
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    font-size: clamp(1.25rem, 2vw, 1.85rem);
+    font-weight: 400;
+    text-align: center;
+  }
+}
