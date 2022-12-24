@@ -1,7 +1,21 @@
 import "./index.scss";
 import { BsSearch } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import { useDebounceValue } from "../../../Hooks/Hooks";
 
 const SearchBar = (props) => {
+  const [enteredSearch, setEnteredSearch] = useState("");
+
+  const debouncedSearchValue = useDebounceValue(enteredSearch, 500);
+
+  useEffect(() => {
+    if (debouncedSearchValue) {
+      console.log("there is search result ===>", debouncedSearchValue);
+    } else {
+      console.log("there is no results ====>", debouncedSearchValue);
+    }
+  }, [debouncedSearchValue]);
+
   return (
     <div className={"navloged__search"}>
       <BsSearch
@@ -20,6 +34,7 @@ const SearchBar = (props) => {
         type="text"
         placeholder="Enter the title"
         className={props.search ? "open" : ""}
+        onChange={(e) => setEnteredSearch(e.target.value)}
       />
     </div>
   );
