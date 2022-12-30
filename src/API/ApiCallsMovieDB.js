@@ -1,3 +1,5 @@
+import { searchMovieUrl, searchTvUrl } from "./movieApiUtils";
+
 //Fetching data for movie and tv series list
 export const movieApiCall = async (
   apiCall,
@@ -36,18 +38,14 @@ export const gettingItemDetailsApiCall = async (
   setData,
   setSimilar,
   setTrailers,
-  movieDetails,
-  trailerUrl,
-  similarMovieUrl
+  movieArr
 ) => {
-  const movieDetails2 = [movieDetails, trailerUrl, similarMovieUrl];
-
   try {
     setLoading(true);
 
     const [movieDetailResponse, trailersResponse, similarMoviesResponse] =
       await Promise.all(
-        movieDetails2.map((url) => fetch(url).then((res) => res.json()))
+        movieArr.map((url) => fetch(url).then((res) => res.json()))
       );
 
     trailersResponse.results.forEach((trailer) => {
@@ -61,5 +59,28 @@ export const gettingItemDetailsApiCall = async (
     setSimilar(similarMoviesResponse.results);
   } catch (error) {
     throw Error(error);
+  }
+};
+
+//Function which is used when searching for movies or tv from search bar
+export const fetchingDataByEnteredSearch = async (
+  debouncedSearchValue,
+  setSearchResult
+) => {
+  try {
+    let location = window.location.href;
+
+    const movieSearch = await fetch(
+      location.includes("movies")
+        ? `${searchMovieUrl + debouncedSearchValue}`
+        : `${searchTvUrl + debouncedSearchValue}`
+    );
+
+    const movieSearchResponse = await movieSearch.json();
+
+    setSearchResult(movieSearchResponse.results);
+  } catch (err) {
+    console.log(err);
+    throw Error(err);
   }
 };

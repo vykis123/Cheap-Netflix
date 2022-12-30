@@ -5,11 +5,16 @@ import { useContext, useState } from "react";
 import Logo from "../../Logo";
 import { MdArrowDropUp } from "react-icons/md";
 import SearchBar from "../SearchBar";
+import StoreSearchContext from "../../../store/SearchInput-provider";
 
 const LogedNav = () => {
   const [search, setSearch] = useState(false);
 
   const userName = useContext(StoreContext).userName[0];
+
+  const { setSearchValue } = useContext(StoreSearchContext);
+
+  const clearSearchResultAfterClick = () => setSearchValue([]);
 
   const logOut = useContext(StoreContext).logout;
   const logoInfo = { min: 1, mid: 2, max: 2 };
@@ -18,6 +23,8 @@ const LogedNav = () => {
     event.target.parentNode.className === "navloged__search"
       ? setSearch(true)
       : setSearch(false);
+
+    clearSearchResultAfterClick();
   };
 
   return (
@@ -26,11 +33,19 @@ const LogedNav = () => {
         <Logo info={logoInfo} />
 
         <ul className="navloged__links">
-          <NavLink className="navloged__btn" to="/movies">
+          <NavLink
+            className="navloged__btn"
+            to="/movies"
+            onClick={clearSearchResultAfterClick}
+          >
             Movies
           </NavLink>
 
-          <NavLink className="navloged__btn" to="/tvseries">
+          <NavLink
+            className="navloged__btn"
+            to="/tvseries"
+            onClick={clearSearchResultAfterClick}
+          >
             Tv Series
           </NavLink>
         </ul>

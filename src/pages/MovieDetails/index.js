@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { API_KEY, MAIN_URL } from "../../API/movieApiUtils";
+import {
+  movieImgBaseUrlObj,
+  MovieDetailUrlBuilder,
+} from "../../API/movieApiUtils";
 
 import "./index.scss";
 import MovieDetail from "../../components/MovieDetail";
@@ -11,23 +14,14 @@ import { gettingItemDetailsApiCall } from "../../API/ApiCallsMovieDB";
 
 const MovieDetails = () => {
   const params = useParams();
-
-  const imgSrc = "http://image.tmdb.org/t/p/original/";
+  const { movieId } = params;
 
   const [data, setData] = useState("");
   const [trailers, setTrailers] = useState([]);
   const [similar, setSimilar] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const { movieId } = params;
-
-  let location = window.location.href;
-
-  const typeOfVideo = location.includes("movies") ? "movie" : "tv";
-
-  const movieDetails = `${MAIN_URL}${typeOfVideo}/${movieId}?api_key=${API_KEY}&language=en-US`;
-  const trailerUrl = `${MAIN_URL}${typeOfVideo}/${movieId}/videos?api_key=${API_KEY}&language=en-US`;
-  const similarMovieUrl = `${MAIN_URL}${typeOfVideo}/${movieId}/similar?api_key=${API_KEY}&language=en-US&page=1`;
+  const movieArr = MovieDetailUrlBuilder();
 
   useEffect(() => {
     gettingItemDetailsApiCall(
@@ -35,11 +29,9 @@ const MovieDetails = () => {
       setData,
       setSimilar,
       setTrailers,
-      movieDetails,
-      trailerUrl,
-      similarMovieUrl
+      movieArr
     );
-  }, [movieDetails, trailerUrl, similarMovieUrl]);
+  }, [movieId]);
 
   return (
     <>
@@ -48,7 +40,7 @@ const MovieDetails = () => {
           className="detail"
           style={{
             backgroundImage: `linear-gradient(108deg,rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.36)), url(${
-              imgSrc + data.backdrop_path
+              movieImgBaseUrlObj.original + data.backdrop_path
             })`,
           }}
         >

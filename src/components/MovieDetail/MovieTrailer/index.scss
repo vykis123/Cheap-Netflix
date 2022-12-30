@@ -1,3 +1,5 @@
+@use "../../../scss/index" as *;
+
 .movie__trailer {
   min-width: 60%;
 
@@ -24,6 +26,6 @@
     letter-spacing: 1px;
     font-size: 0.8rem;
     color: #fff;
-    font-family: "Open Sans", sans-serif;
+    font-family: $font-family;
   }
 }

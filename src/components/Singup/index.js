@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import apiLogic from "./apiLogic";
+import { SingUpApi } from "../../API/ApiCallsFireBase";
 import "./index.scss";
 
 const SingUp = () => {
@@ -77,7 +77,7 @@ const SingUp = () => {
       },
     };
 
-    apiLogic(settings, allFieldsInfo, setStatusMessage, history);
+    SingUpApi(settings, allFieldsInfo, setStatusMessage, history);
 
     e.target.reset();
   };
@@ -163,7 +163,7 @@ const SingUp = () => {
       </div>
 
       <button className="singup__btn" type="submit">
-        Sing In
+        Sing Up
       </button>
 
       <p className="singup__text">Already Have a Account?</p>

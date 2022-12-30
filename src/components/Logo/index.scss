@@ -1,3 +1,5 @@
+@use "../../scss/index" as *;
+
 .nav__logo {
   -webkit-clip-path: polygon(
     44% 0,
@@ -26,8 +28,8 @@
 
   a {
     text-decoration: none;
-    color: #e50914;
+    color: $primary-red;
     font-weight: bold;
-    font-family: "Open Sans", sans-serif;
+    font-family: $font-family;
   }
 }

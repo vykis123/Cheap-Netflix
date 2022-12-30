@@ -1,9 +1,11 @@
+@use "../../scss/index" as *;
+
 .singup {
   min-width: 25%;
   border-radius: 0.3rem;
   padding: 3rem;
   margin-top: 4rem;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: $background-color1;
   position: relative;
 
   @media (max-width: 1100px) {
@@ -20,7 +22,7 @@
   &__heading {
     font-size: clamp(1.75rem, 3vw, 2.3rem);
     font-family: "Open Sans", sans-serif;
-    color: #fff;
+    color: $color-white1;
     font-weight: 600;
     margin-bottom: 2rem;
   }
@@ -40,12 +42,11 @@
         width: 100%;
         padding: 1.5rem 1rem 0.5rem 1rem;
         border-radius: 0.3rem;
-        background-color: #333;
+        background-color: $color-black1;
         border: none;
-        // box-shadow: inset 0rem -0.45rem 0rem -0.3rem #e87c03;
         font-size: 1.2rem;
-        color: #fff;
-        font-family: "Open Sans", sams-serif;
+        color: $color-white1;
+        font-family: $font-family;
 
         &:focus {
           outline: none;
@@ -66,7 +67,7 @@
       .wrong-email,
       .empty-email,
       .wrong-pass2 {
-        box-shadow: inset 0rem -0.15rem 0rem #e87c03;
+        box-shadow: inset 0rem -0.15rem 0rem $color-orange1;
       }
 
       span {
@@ -75,26 +76,25 @@
         top: 50%;
         translate: 0 -50%;
         font-size: clamp(1rem, 3vw, 1.2rem);
-        font-family: "Open Sans", sans-serif;
-        color: #8c8c8c;
-        font-family: "Open Sans", sans-serif;
+        font-family: $font-family;
+        color: $color-grey2;
         transition: all 0.2s ease-in;
         pointer-events: none;
       }
     }
 
     p {
-      color: #e87c03;
+      color: $color-orange1;
       bottom: 2rem;
       padding: 0.2rem 0.5rem;
       font-size: clamp(1rem, 3vw, 1rem);
     }
 
     p.password {
-      color: #bbb4b4;
+      color: $color-grey3;
     }
     p.correct {
-      color: #00ff00;
+      color: $color-green-light;
     }
   }
 
@@ -102,31 +102,31 @@
     width: 100%;
     font-size: clamp(1.2rem, 3vw, 1.4rem);
     padding: 1rem 0;
-    background-color: #e50914;
+    background-color: $primary-red;
     border: none;
     border-radius: 0.3rem;
-    color: #fff;
+    color: $color-white1;
     transition: color 0.2s ease-in;
     margin-bottom: 2rem;
 
     &:focus,
     &:hover {
       outline: none;
-      color: #333;
+      color: $color-black1;
       cursor: pointer;
     }
   }
 
   &__text {
-    color: #737373;
+    color: $color-grey2;
     font-size: clamp(1rem, 3vw, 1.2rem);
-    font-family: "Open Sans", sans-serif;
+    font-family: $font-family;
     display: inline-block;
     margin-right: 0.5rem;
   }
 
   &__link {
-    color: #fff;
+    color: $color-white1;
     background: none;
     border: none;
     cursor: pointer;
@@ -137,7 +137,7 @@
     &:hover,
     &:focus {
       outline: none;
-      color: #e50914;
+      color: $primary-red;
     }
   }
 
@@ -146,11 +146,11 @@
     bottom: -1%;
     left: 50%;
     transform: translateX(-50%);
-    color: #fff;
+    color: $color-white1;
     text-align: center;
     margin-bottom: 1rem;
     font-size: clamp(1rem, 3vw, 1.3rem);
-    color: #44f712;
+    color: $color-green-light;
     animation: fadeInFromAbove 0.25s ease-out;
     min-width: 80%;
     pointer-events: none;

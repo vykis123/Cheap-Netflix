@@ -1,12 +1,13 @@
+@use "../../../scss/index" as *;
+
 .navloged {
   min-width: 100%;
   position: absolute;
-  display: flex;
-  align-items: center;
+  @include flexAlign;
   padding: 1.5rem;
   position: fixed;
   z-index: 8000;
-  background-color: #00000075;
+  background-color: $background-color4;
 
   &__links {
     padding: 1rem;
@@ -24,11 +25,11 @@
   }
 
   &__btn {
-    color: #fff;
+    color: $color-white1;
     text-decoration: none;
     font-size: clamp(0.85rem, 2vw, 1.15rem);
     letter-spacing: 0.1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: $font-family;
     font-weight: 600;
     opacity: 0.9;
     transition: opacity 0.1s ease-in;
@@ -47,8 +48,7 @@
   }
 
   .wrapper {
-    display: flex;
-    align-items: center;
+    @include flexAlign;
     flex-wrap: wrap;
 
     @media only screen and (max-width: 900px) {
@@ -58,8 +58,8 @@
   }
 
   &__name {
-    color: #fff;
-    font-family: "Open Sans", sans-serif;
+    color: $color-white1;
+    font-family: $font-family;
     font-size: clamp(0.9rem, 3vw, 1.2rem);
     font-weight: 700;
     letter-spacing: 1px;
@@ -76,9 +76,7 @@
 
   &__icon {
     width: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(center, space-between);
     cursor: pointer;
     flex-wrap: wrap;
     border: none;
@@ -108,7 +106,7 @@
     }
 
     .arrow {
-      fill: #fff;
+      fill: $color-white1;
       width: 2rem;
       height: 2rem;
       transition: transform 0.3s ease-out;
@@ -120,7 +118,7 @@
   }
 
   &__icon-menu {
-    background-color: #1a1919;
+    background-color: $background-color5;
     position: absolute;
     width: 10rem;
     padding: 0.5rem;
@@ -145,10 +143,10 @@
     }
 
     a {
-      color: #fff;
+      color: $color-white1;
       text-decoration: none;
       font-size: clamp(-0.25rem, 3vw, 0.9rem);
-      font-family: "Sans Open", sans-serif;
+      font-family: $font-family;
       font-weight: bold;
       letter-spacing: 1px;
       cursor: pointer;
@@ -172,6 +170,7 @@
 
       @media only screen and (max-width: 900px) {
         display: inline-block;
+        width: 100%;
       }
     }
 
@@ -181,8 +180,8 @@
         margin-bottom: 1.5rem;
         font-style: italic;
         opacity: 0.9;
-        color: #fff;
-        font-family: "Open Sans", sans-serif;
+        color: $color-white1;
+        font-family: $font-family;
         font-size: clamp(0.9rem, 3vw, 1.2rem);
         font-weight: 700;
         letter-spacing: 1px;

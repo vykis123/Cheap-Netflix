@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import StoreContext from "../../store/Context-provider";
-import FetchApi from "./fetchApi";
+import { LogInApi } from "../../API/ApiCallsFireBase";
 import MiniLoader from "../MiniLoader";
 import "./index.scss";
 
@@ -33,7 +33,7 @@ const Singin = () => {
   const submitLogin = async (e) => {
     e.preventDefault();
 
-    FetchApi(
+    LogInApi(
       email,
       password,
       setInfoMsg,

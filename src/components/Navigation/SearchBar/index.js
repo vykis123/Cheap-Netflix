@@ -1,20 +1,32 @@
 import "./index.scss";
 import { BsSearch } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { useDebounceValue } from "../../../Hooks/Hooks";
+import { fetchingDataByEnteredSearch } from "../../../API/ApiCallsMovieDB";
+import TypeAhead from "./SearchAhead";
+import StoreSearchContext from "../../../store/SearchInput-provider";
 
 const SearchBar = (props) => {
   const [enteredSearch, setEnteredSearch] = useState("");
 
+  const { setSearchValue, searchValue } = useContext(StoreSearchContext);
+
   const debouncedSearchValue = useDebounceValue(enteredSearch, 500);
+
+  const inputResult = useRef();
 
   useEffect(() => {
     if (debouncedSearchValue) {
-      console.log("there is search result ===>", debouncedSearchValue);
+      fetchingDataByEnteredSearch(debouncedSearchValue, setSearchValue);
     } else {
-      console.log("there is no results ====>", debouncedSearchValue);
+      setSearchValue([]);
     }
-  }, [debouncedSearchValue]);
+  }, [debouncedSearchValue, setSearchValue]);
+
+  const clearSearchResultAfterClick = () => {
+    inputResult.current.value = "";
+    setSearchValue([]);
+  };
 
   return (
     <div className={"navloged__search"}>
@@ -35,6 +47,12 @@ const SearchBar = (props) => {
         placeholder="Enter the title"
         className={props.search ? "open" : ""}
         onChange={(e) => setEnteredSearch(e.target.value)}
+        ref={inputResult}
+      />
+
+      <TypeAhead
+        searchRes={searchValue}
+        clearSearch={clearSearchResultAfterClick}
       />
     </div>
   );

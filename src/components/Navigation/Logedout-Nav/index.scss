@@ -1,9 +1,9 @@
+@use "../../../scss/index" as *;
+
 .nav {
   min-width: 100%;
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include flex(center, space-between);
   padding: 1.5rem;
 
   @media (max-width: 450px) {
@@ -14,9 +14,9 @@
     background-color: #e50914;
     align-items: center;
     padding: 0.7rem 1.7rem;
-    font-family: "Opens Sans", sans-serif;
+    font-family: $font-family;
     font-weight: 600;
-    color: #fff;
+    color: $color-white1;
     border: none;
     border-radius: 0.3rem;
     cursor: pointer;
@@ -33,11 +33,11 @@
     }
 
     &:hover {
-      color: #000;
+      color: $color-black2;
     }
 
     &:focus {
-      outline: 1px solid #000;
+      outline: 1px solid $color-black2;
     }
   }
 }

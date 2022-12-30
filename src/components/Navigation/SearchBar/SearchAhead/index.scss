@@ -1,33 +1,4 @@
-@use "../../../scss/index" as *;
-
-.navloged__search {
-  position: relative;
-  margin-right: 1rem;
-  width: 100%;
-
-  input {
-    padding: 0.8rem 0.8rem 0.8rem 2.5rem;
-    border: 1px solid $color-white1;
-    background: transparent;
-    color: $color-white1;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.1rem;
-    max-width: 0rem;
-    opacity: 0;
-    transition: max-width 0.2s ease-in, opacity 0.25s ease-in;
-    cursor: pointer;
-  }
-  .open {
-    outline: none;
-    opacity: 1;
-    max-width: 19rem;
-
-    @media only screen and (max-width: 900px) {
-      max-width: 13rem;
-    }
-  }
-}
+@use "../../../../scss/index" as *;
 
 .navloged__typeahead {
   position: absolute;
@@ -45,6 +16,7 @@
     cursor: pointer;
     transition: background-color 0.25s ease-in;
     padding: 0.4rem;
+    text-decoration: none;
 
     &::after {
       content: "";
