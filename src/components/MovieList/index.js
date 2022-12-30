@@ -37,13 +37,6 @@ const Slider = ({ movie, name }) => {
     });
   };
 
-  // const onTouchLeft = (diff) => {
-  //   slider.current.scroll({
-  //     behavior: "smooth",
-  //     left: slider.current.scrollLeft + diff,
-  //   });
-  // };
-
   const [touchPosition, setTouchPosition] = useState(null);
 
   const onTouchLogic = (diff) => {
@@ -54,7 +47,6 @@ const Slider = ({ movie, name }) => {
   };
 
   const handleTouchStart = (event) => {
-    console.log(event);
     const touchDown = event.touches[0].clientX;
     setTouchPosition(touchDown);
   };

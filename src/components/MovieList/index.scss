@@ -52,7 +52,6 @@
     rgba(109, 105, 105, 0.08),
     rgba(134, 129, 129, 0.24)
   );
-
   @include flex(center, center);
   top: 8%;
   cursor: pointer;
@@ -68,6 +67,10 @@
       rgba(109, 105, 105, 0.377),
       rgba(134, 129, 129, 0.514)
     );
+  }
+
+  @media only screen and (max-width: 700px) {
+    display: none;
   }
 }
 .right {
