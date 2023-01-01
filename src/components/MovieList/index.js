@@ -77,12 +77,13 @@ const Slider = ({ movie, name }) => {
           onTouchStart={handleTouchStart}
           onTouchMove={onTouchMove}
         >
-          {movie.map((movie) => {
+          {movie.map((movie, i) => {
             return (
               <MovieCard
                 movie={movie}
                 onTouchStart={handleTouchStart}
                 onTouchMove={onTouchMove}
+                key={i}
               />
             );
           })}
