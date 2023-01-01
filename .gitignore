@@ -24,3 +24,5 @@ yarn-error.log*
 
 #Config apis
 ConfigApi.js
+
+.env
