@@ -1,7 +1,8 @@
 import { useParams } from "react-router-dom";
-import { movieApiKey } from "./ConfigApi";
+//import { movieApiKey } from "./ConfigApi";
 
-export const API_KEY = movieApiKey;
+// export const API_KEY = movieApiKey;
+export const API_KEY = process.env.REACT_APP_MOVIEDB_API_KEY;
 export const MAIN_URL = "https://api.themoviedb.org/3/";
 export const tvGanreUrl = `${MAIN_URL}genre/tv/list?api_key=${API_KEY}&language=en-US`;
 export const discoverTvUrl = `${MAIN_URL}discover/tv?api_key=${API_KEY}&with_genres=`;
