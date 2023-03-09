@@ -1,4 +1,4 @@
-${\color{red}Cheap \space Netflix}$
+<span style="color:red">Cheap Netflix</span>
 
 For log in autorisation used Free firbase autentication for email and password in addition to free real time dataBase storing and fetching users info. -> [FireBase](https://firebase.google.com/?gclid=CjwKCAiA-8SdBhBGEiwAWdgtcFB2FAVqDw0fbb03znY0VogHE0ggubcVKFZ6pjR8JNnIP8r_T6H2NBoCKUAQAvD_BwE&gclsrc=aw.ds)
 
