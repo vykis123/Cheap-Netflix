@@ -4,7 +4,7 @@ For log in autorisation used Free firbase autentication for email and password i
 
 For movie data used free moviedb apis -> [MovieDB](https://developers.themoviedb.org/3/getting-started/introduction).
 
-Project created using React with ${\color{yellow}VanilaJs}$ with ${\color{pink}SCSS}$, React hooks, custom hooks, React router and many more :)
+Project created using React with <span color="red">VanilaJs</span> with ${\color{pink}SCSS}$, React hooks, custom hooks, React router and many more :)
 
 Link to live project on netlify -> [Check it here](training-site-for-movies.netlify.app)
 
